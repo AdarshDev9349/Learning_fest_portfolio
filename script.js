@@ -21,8 +21,19 @@ var typed = new Typed('#typed-text', {
     });
   });
 
-  gsap.from(".about", { duration: 6, opacity: 0, y: -50, ease: "power4.out" });
+
+gsap.registerPlugin(ScrollTrigger);
 
 
-
-  
+gsap.from(".about", {
+  duration: 1.5,
+  opacity: 0,
+  y: -50,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: ".about", 
+    start: "top center", 
+    end: "bottom center", 
+    toggleActions: "restart none none none", 
+  },
+});
