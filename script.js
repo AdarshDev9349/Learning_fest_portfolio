@@ -37,3 +37,14 @@ gsap.from(".about", {
     toggleActions: "restart none none none", 
   },
 });
+gsap.to(".myabout", {
+  opacity: 0,
+  y: -50,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: ".about", // Element that triggers the animation
+    start: "bottom center", // Trigger animation when the bottom of the element hits the center of the viewport
+    end: "top center", // Trigger animation when the top of the element hits the center of the viewport
+    toggleActions: "restart none none none", // Restart the animation each time the trigger is reached
+  },
+});
